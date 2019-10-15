@@ -1,0 +1,11 @@
+html, body {
+    font-family: 'DejaVu Sans Mono', monospace;
+}
+
+label {
+    vertical-align: top;
+}
+
+#contactKeyId {
+    width: 38ex;
+}
