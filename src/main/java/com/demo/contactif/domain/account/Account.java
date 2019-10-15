@@ -1,4 +1,4 @@
-package com.demo.contactif.infrastructure.account;
+package com.demo.contactif.domain.account;
 
 import lombok.Getter;
 

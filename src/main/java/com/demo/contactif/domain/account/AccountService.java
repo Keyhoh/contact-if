@@ -1,4 +1,4 @@
-package com.demo.contactif.infrastructure.account;
+package com.demo.contactif.domain.account;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

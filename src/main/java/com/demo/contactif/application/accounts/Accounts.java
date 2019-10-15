@@ -1,7 +1,7 @@
 package com.demo.contactif.application.accounts;
 
-import com.demo.contactif.infrastructure.account.Account;
-import com.demo.contactif.infrastructure.account.AccountService;
+import com.demo.contactif.domain.account.Account;
+import com.demo.contactif.domain.account.AccountService;
 import com.demo.contactif.infrastructure.application.User;
 import com.demo.contactif.infrastructure.application.UserRepository;
 import com.demo.contactif.infrastructure.security.Authentication;

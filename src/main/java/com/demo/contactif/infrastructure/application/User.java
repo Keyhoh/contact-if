@@ -1,6 +1,6 @@
 package com.demo.contactif.infrastructure.application;
 
-import com.demo.contactif.infrastructure.account.Account;
+import com.demo.contactif.domain.account.Account;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
