@@ -1,6 +1,7 @@
 package com.demo.contactif.presentation;
 
 import com.demo.contactif.application.accounts.Accounts;
+import com.demo.contactif.domain.security.password.Password;
 import com.demo.contactif.infrastructure.application.ContactKey;
 import com.demo.contactif.infrastructure.application.ContactKeyRepository;
 import com.demo.contactif.infrastructure.application.User;
@@ -42,7 +43,7 @@ public class DemoController {
     @PostMapping("/accounts")
     @ResponseBody
     public String postAccount(@RequestParam("email") @Email String emailAddress, @RequestParam("password") @NotBlank String password) {
-        return accounts.postAccount(emailAddress, password).getId();
+        return accounts.postAccount(emailAddress, Password.of(password)).getId();
     }
 
     @GetMapping("/contactKey")

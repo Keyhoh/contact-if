@@ -1,4 +1,4 @@
-package com.demo.contactif.domain.security;
+package com.demo.contactif.domain.security.accountdetails;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

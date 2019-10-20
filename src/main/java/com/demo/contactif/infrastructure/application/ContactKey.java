@@ -7,6 +7,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.UUID;
 
 @Entity
@@ -15,6 +17,8 @@ import java.util.UUID;
 public class ContactKey {
     @Id
     @Column(length = 36)
+    @NotNull
+    @Size(min = 36, max = 36)
     private String id = UUID.randomUUID().toString();
     @ManyToOne
     private User user;

@@ -1,17 +1,20 @@
 package com.demo.contactif.domain.util;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
 import javax.validation.Validation;
-import javax.validation.ValidationException;
 import javax.validation.Validator;
-import java.util.NoSuchElementException;
 import java.util.Objects;
+import java.util.Set;
 
 public final class Validational<T> {
     private static Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
     /**
-     * If non-null, the value; if null, indicates no value is present
+     * If valid, the value; if invalid, indicates value has invalid
      */
     private final T value;
+
+    private final Set<ConstraintViolation<T>> errors;
 
     /**
      * Constructs an instance with the described value.
@@ -21,6 +24,7 @@ public final class Validational<T> {
      */
     private Validational(T value) {
         this.value = Objects.requireNonNull(value);
+        this.errors = validator.validate(value);
     }
 
     /**
@@ -37,27 +41,12 @@ public final class Validational<T> {
     }
 
     /**
-     * If a value is present, returns the value, otherwise throws
-     * {@code NoSuchElementException}.
-     *
-     * @return the non-{@code null} value described by this {@code Validational}
-     * @throws NoSuchElementException if no value is present
-     * @apiNote The preferred alternative to this method is {@link #orElseThrow()}.
-     */
-    public T get() {
-        if (isInvalid()) {
-            throw new ValidationException();
-        }
-        return value;
-    }
-
-    /**
      * If a value is valid, returns {@code true}, otherwise {@code false}.
      *
      * @return {@code true} if a value is valid, otherwise {@code false}.
      */
     public boolean isValid() {
-        return validator.validate(value).isEmpty();
+        return errors.isEmpty();
     }
 
     /**
@@ -70,16 +59,16 @@ public final class Validational<T> {
     }
 
     /**
-     * If a value is present, returns the value, otherwise throws
-     * {@code NoSuchElementException}.
+     * If a value is valid, returns the value, otherwise throws
+     * {@code }.
      *
      * @return the non-{@code null} value described by this {@code Validational}
-     * @throws NoSuchElementException if no value is present
+     * @throws ConstraintViolationException if no value is present
      * @since 10
      */
     public T orElseThrow() {
-        if (value == null) {
-            throw new NoSuchElementException("No value present");
+        if (isInvalid()) {
+            throw new ConstraintViolationException(errors);
         }
         return value;
     }

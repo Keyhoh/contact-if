@@ -8,6 +8,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @AllArgsConstructor
@@ -15,19 +17,21 @@ import javax.validation.constraints.Email;
 @Getter
 @Setter
 public class User {
+    public User(Account account, String emailAddress) {
+        this.account = account;
+        this.emailAddress = emailAddress;
+    }
+
     @Id
     @Column(length = 36)
+    @NotNull
+    @Size(min = 36, max = 36)
     private String id;
     @OneToOne
     @JoinColumn(name = "id")
     @MapsId
     private Account account;
-    @Email
     @Column(unique = true)
+    @Email
     private String emailAddress;
-
-    public User(Account account, @Email String emailAddress) {
-        this.account = account;
-        this.emailAddress = emailAddress;
-    }
 }

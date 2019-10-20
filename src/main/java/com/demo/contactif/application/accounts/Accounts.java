@@ -2,6 +2,8 @@ package com.demo.contactif.application.accounts;
 
 import com.demo.contactif.domain.account.Account;
 import com.demo.contactif.domain.account.AccountService;
+import com.demo.contactif.domain.security.password.Password;
+import com.demo.contactif.domain.util.Validational;
 import com.demo.contactif.infrastructure.application.User;
 import com.demo.contactif.infrastructure.application.UserRepository;
 import com.demo.contactif.infrastructure.security.Authentication;
@@ -10,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 
 @Service
 public class Accounts {
@@ -25,9 +26,9 @@ public class Accounts {
     }
 
     @Transactional
-    public Account postAccount(@Email String emailAddress, @NotBlank String password) {
+    public Account postAccount(@Email String emailAddress, Password password) {
         Account account = accountService.create();
-        authenticationRepository.save(new Authentication(account, password));
+        authenticationRepository.save(Validational.of(new Authentication(account, password)).orElseThrow());
         userRepository.save(new User(account, emailAddress));
         return account;
     }
