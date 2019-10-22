@@ -1,13 +1,10 @@
-package com.demo.contactif.infrastructure.application;
+package com.demo.contactif.domain.application.contactkey;
 
 import com.demo.contactif.domain.application.user.User;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.UUID;
@@ -21,6 +18,6 @@ public class ContactKey {
     @NotNull
     @Size(min = 36, max = 36)
     private String id = UUID.randomUUID().toString();
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private User user;
 }

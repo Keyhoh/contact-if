@@ -1,10 +1,10 @@
 package com.demo.contactif.application.accounts;
 
 import com.demo.contactif.domain.account.Account;
-import com.demo.contactif.domain.account.AccountRepository;
 import com.demo.contactif.domain.application.email.EmailAddress;
 import com.demo.contactif.domain.application.user.User;
 import com.demo.contactif.domain.security.password.Password;
+import com.demo.contactif.infrastructure.account.AccountRepository;
 import com.demo.contactif.infrastructure.application.ContactKeyRepository;
 import com.demo.contactif.infrastructure.application.UserRepository;
 import com.demo.contactif.infrastructure.security.Authentication;

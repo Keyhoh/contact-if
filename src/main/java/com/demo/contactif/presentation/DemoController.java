@@ -4,7 +4,7 @@ import com.demo.contactif.application.accounts.Accounts;
 import com.demo.contactif.domain.application.email.EmailAddress;
 import com.demo.contactif.domain.application.user.User;
 import com.demo.contactif.domain.security.password.Password;
-import com.demo.contactif.infrastructure.application.ContactKey;
+import com.demo.contactif.domain.application.contactkey.ContactKey;
 import com.demo.contactif.infrastructure.application.ContactKeyRepository;
 import com.demo.contactif.infrastructure.application.UserRepository;
 import org.springframework.mail.MailSender;

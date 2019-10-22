@@ -29,7 +29,7 @@ public class Authentication {
     @Column(length = 36)
     @Size(min = 36, max = 36)
     private String id;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     @MapsId
     private Account account;
