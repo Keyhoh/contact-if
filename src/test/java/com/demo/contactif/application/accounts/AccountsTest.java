@@ -3,8 +3,9 @@ package com.demo.contactif.application.accounts;
 import com.demo.contactif.domain.account.Account;
 import com.demo.contactif.domain.account.AccountRepository;
 import com.demo.contactif.domain.account.AccountService;
+import com.demo.contactif.domain.application.email.EmailAddress;
+import com.demo.contactif.domain.application.user.User;
 import com.demo.contactif.domain.security.password.Password;
-import com.demo.contactif.infrastructure.application.User;
 import com.demo.contactif.infrastructure.application.UserRepository;
 import com.demo.contactif.infrastructure.security.Authentication;
 import com.demo.contactif.infrastructure.security.AuthenticationRepository;
@@ -44,8 +45,8 @@ class AccountsTest {
         when(userRepository.save(any(User.class))).thenAnswer(invocation -> invocation.getArgument(0));
         initializeAccounts();
 
-        assertDoesNotThrow(() -> accounts.postAccount("test@dev.com", Password.of("password")));
-        Account account = accounts.postAccount("test@dev.com", Password.of("password"));
+        assertDoesNotThrow(() -> accounts.postAccount(EmailAddress.of("test@dev.com"), Password.of("password")));
+        Account account = accounts.postAccount(EmailAddress.of("test@dev.com"), Password.of("password"));
         assertNotNull(account);
         assertNotNull(account.getId());
         assertDoesNotThrow(() -> UUID.fromString(account.getId()));

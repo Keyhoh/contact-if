@@ -5,21 +5,17 @@ import com.google.common.base.Strings;
 import javax.validation.constraints.NotBlank;
 
 public class Password {
-    private Password(String p) {
-        this.p = p;
+    private Password(String value) {
+        this.value = value;
     }
 
-    public static Password of(String p) {
-        if (Strings.isNullOrEmpty(p)) {
+    public static Password of(String value) {
+        if (Strings.isNullOrEmpty(value)) {
             throw new IllegalArgumentException();
         }
-        return new Password(p);
+        return new Password(value);
     }
 
     @NotBlank
-    private String p;
-
-    public String value() {
-        return p;
-    }
+    public final String value;
 }

@@ -3,7 +3,7 @@ package com.demo.contactif.application.accounts;
 import com.demo.contactif.exception.NotFoundInStoreException;
 import com.demo.contactif.infrastructure.application.ContactKey;
 import com.demo.contactif.infrastructure.application.ContactKeyRepository;
-import com.demo.contactif.infrastructure.application.User;
+import com.demo.contactif.domain.application.user.User;
 import com.demo.contactif.infrastructure.application.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,14 +1,11 @@
-package com.demo.contactif.infrastructure.application;
+package com.demo.contactif.domain.application.user;
 
 import com.demo.contactif.domain.account.Account;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.demo.contactif.domain.application.email.EmailAddress;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -17,14 +14,13 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 public class User {
-    public User(Account account, String emailAddress) {
+    public User(@NonNull Account account, @NonNull EmailAddress emailAddress) {
         this.account = account;
-        this.emailAddress = emailAddress;
+        this.emailAddress = emailAddress.value;
     }
 
     @Id
     @Column(length = 36)
-    @NotNull
     @Size(min = 36, max = 36)
     private String id;
     @OneToOne

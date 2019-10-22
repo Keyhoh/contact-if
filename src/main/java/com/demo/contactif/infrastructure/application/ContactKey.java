@@ -1,5 +1,6 @@
 package com.demo.contactif.infrastructure.application;
 
+import com.demo.contactif.domain.application.user.User;
 import lombok.Getter;
 import lombok.Setter;
 

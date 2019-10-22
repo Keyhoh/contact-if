@@ -1,10 +1,11 @@
 package com.demo.contactif.presentation;
 
 import com.demo.contactif.application.accounts.Accounts;
+import com.demo.contactif.domain.application.email.EmailAddress;
+import com.demo.contactif.domain.application.user.User;
 import com.demo.contactif.domain.security.password.Password;
 import com.demo.contactif.infrastructure.application.ContactKey;
 import com.demo.contactif.infrastructure.application.ContactKeyRepository;
-import com.demo.contactif.infrastructure.application.User;
 import com.demo.contactif.infrastructure.application.UserRepository;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
@@ -43,7 +44,7 @@ public class DemoController {
     @PostMapping("/accounts")
     @ResponseBody
     public String postAccount(@RequestParam("email") @Email String emailAddress, @RequestParam("password") @NotBlank String password) {
-        return accounts.postAccount(emailAddress, Password.of(password)).getId();
+        return accounts.postAccount(EmailAddress.of(emailAddress), Password.of(password)).getId();
     }
 
     @GetMapping("/contactKey")

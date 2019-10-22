@@ -22,7 +22,7 @@ import java.util.Collection;
 public class Authentication {
     public Authentication(Account account, Password password) {
         this.account = account;
-        this.password = new BCryptPasswordEncoder().encode(password.value());
+        this.password = new BCryptPasswordEncoder().encode(password.value);
     }
 
     @Id
