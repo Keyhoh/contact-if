@@ -8,4 +8,6 @@ import java.util.List;
 @Repository
 public interface ContactKeyRepository extends CrudRepository<ContactKey, String> {
     List<ContactKey> findByUserId(String userId);
+
+    void deleteAllByUserId(String userId);
 }
