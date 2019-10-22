@@ -5,7 +5,6 @@ import com.demo.contactif.domain.account.AccountService;
 import com.demo.contactif.domain.application.email.EmailAddress;
 import com.demo.contactif.domain.application.user.User;
 import com.demo.contactif.domain.security.password.Password;
-import com.demo.contactif.domain.util.Validational;
 import com.demo.contactif.infrastructure.application.UserRepository;
 import com.demo.contactif.infrastructure.security.Authentication;
 import com.demo.contactif.infrastructure.security.AuthenticationRepository;
@@ -27,7 +26,7 @@ public class Accounts {
     @Transactional
     public Account postAccount(EmailAddress emailAddress, Password password) {
         Account account = accountService.create();
-        authenticationRepository.save(Validational.of(new Authentication(account, password)).orElseThrow());
+        authenticationRepository.save(new Authentication(account, password));
         userRepository.save(new User(account, emailAddress));
         return account;
     }
