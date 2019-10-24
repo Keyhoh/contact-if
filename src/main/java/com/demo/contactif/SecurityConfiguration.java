@@ -36,7 +36,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
                 .antMatchers(HttpMethod.POST, "/accounts", "/sendMail");
-        super.configure(web);
     }
 
     public SecurityConfiguration(@Qualifier("accountDetailsService") UserDetailsService userDetailsService) {
