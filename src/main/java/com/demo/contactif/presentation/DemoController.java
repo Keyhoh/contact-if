@@ -1,10 +1,8 @@
 package com.demo.contactif.presentation;
 
 import com.demo.contactif.application.accounts.Accounts;
-import com.demo.contactif.domain.application.email.EmailAddress;
-import com.demo.contactif.domain.application.user.User;
-import com.demo.contactif.domain.security.password.Password;
 import com.demo.contactif.domain.application.contactkey.ContactKey;
+import com.demo.contactif.domain.application.user.User;
 import com.demo.contactif.infrastructure.application.ContactKeyRepository;
 import com.demo.contactif.infrastructure.application.UserRepository;
 import org.springframework.mail.MailSender;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.security.Principal;
 import java.util.List;
@@ -41,13 +38,7 @@ public class DemoController {
         return "/list.html";
     }
 
-    @PostMapping("/accounts")
-    @ResponseBody
-    public String postAccount(@RequestParam("email") @Email String emailAddress, @RequestParam("password") @NotBlank String password) {
-        return accounts.postAccount(EmailAddress.of(emailAddress), Password.of(password)).getId();
-    }
-
-    @GetMapping("/contactKey")
+    @PostMapping("/contactKeys")
     @ResponseBody
     public String postContactKey(Principal principal) {
         User user = userRepository.findById(principal.getName()).orElseThrow();

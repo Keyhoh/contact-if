@@ -18,6 +18,6 @@ public class ContactKey {
     @NotNull
     @Size(min = 36, max = 36)
     private String id = UUID.randomUUID().toString();
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private User user;
 }

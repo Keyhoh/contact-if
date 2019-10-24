@@ -38,5 +38,7 @@ public class Accounts {
     public void deleteAccount(String id) {
         contactKeyRepository.deleteAllByUserId(id);
         userRepository.deleteById(id);
+        authenticationRepository.deleteById(id);
+        accountRepository.deleteById(id);
     }
 }
