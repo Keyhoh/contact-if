@@ -1,9 +1,9 @@
 package com.demo.contactif.application.accounts;
 
-import com.demo.contactif.exception.NotFoundInStoreException;
 import com.demo.contactif.domain.application.contactkey.ContactKey;
-import com.demo.contactif.infrastructure.application.ContactKeyRepository;
 import com.demo.contactif.domain.application.user.User;
+import com.demo.contactif.exception.NotFoundInStoreException;
+import com.demo.contactif.infrastructure.application.ContactKeyRepository;
 import com.demo.contactif.infrastructure.application.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,7 +39,7 @@ public class ContactKeys {
     @Transactional
     public void deleteContactKey(@NotBlank String id, @NotBlank String userId) throws NotFoundInStoreException {
         ContactKey contactKey = contactKeyRepository.findById(id).orElseThrow(NotFoundInStoreException::new);
-        if (userId.equals(contactKey.getUser().getId())) {
+        if (!userId.equals(contactKey.getUser().getId())) {
             throw new NotFoundInStoreException();
         }
         contactKeyRepository.deleteById(id);

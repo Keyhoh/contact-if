@@ -1,10 +1,7 @@
 package com.demo.contactif.presentation;
 
-import com.demo.contactif.application.accounts.Accounts;
 import com.demo.contactif.domain.application.contactkey.ContactKey;
-import com.demo.contactif.domain.application.user.User;
 import com.demo.contactif.infrastructure.application.ContactKeyRepository;
-import com.demo.contactif.infrastructure.application.UserRepository;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
@@ -16,36 +13,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.constraints.NotBlank;
 import java.security.Principal;
-import java.util.List;
 
 @Controller
 public class DemoController {
-    private final Accounts accounts;
-    private final UserRepository userRepository;
     private final ContactKeyRepository contactKeyRepository;
     private final MailSender mailSender;
 
-    public DemoController(Accounts accounts, UserRepository userRepository, ContactKeyRepository contactKeyRepository, MailSender mailSender) {
-        this.accounts = accounts;
-        this.userRepository = userRepository;
+    public DemoController(ContactKeyRepository contactKeyRepository, MailSender mailSender) {
         this.contactKeyRepository = contactKeyRepository;
         this.mailSender = mailSender;
     }
 
-    @GetMapping("/index")
+    @GetMapping("/mypage")
     public String index(Principal principal, Model model) {
         model.addAttribute("userId", principal.getName());
-        return "/list.html";
-    }
-
-    @PostMapping("/contactKeys")
-    @ResponseBody
-    public String postContactKey(Principal principal) {
-        User user = userRepository.findById(principal.getName()).orElseThrow();
-        ContactKey contactKey = new ContactKey();
-        contactKey.setUser(user);
-        contactKeyRepository.save(contactKey);
-        return contactKey.getId();
+        model.addAttribute("contactKeyList", contactKeyRepository.findByUserId(principal.getName()));
+        return "/myPage.html";
     }
 
     @PostMapping("/sendMail")
@@ -56,11 +39,5 @@ public class DemoController {
         mailMessage.setTo(contactKey.getUser().getEmailAddress());
         mailMessage.setText(text);
         mailSender.send(mailMessage);
-    }
-
-    @GetMapping("/contactKeys")
-    @ResponseBody
-    public List getContactKeys(Principal principal) {
-        return contactKeyRepository.findByUserId(principal.getName());
     }
 }
