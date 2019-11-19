@@ -10,11 +10,11 @@
     <h2 th:text="${userId}"></h2>
 </div>
 <div>
-    <!--/*@thymesVar id="contactKeyList" type="java.util.List<com.demo.contactif.domain.application.contactkey.ContactKey>"*/-->
+    <!--/*@thymesVar id="contactKeyIdList" type="java.util.List<java.lang.String>"*/-->
     <ul>
-        <li th:each="contactKey: ${contactKeyList}">
-            <form th:action="@{/contactKeys/{id}(id=${contactKey.id})}" th:method="delete">
-                [[${contactKey.id}]]
+        <li th:each="contactKeyId: ${contactKeyIdList}">
+            <form th:action="@{/contactKeys/{id}(id=${contactKeyId})}" th:method="delete">
+                [[${contactKeyId}]]
                 <button type="submit">delete</button>
             </form>
         </li>

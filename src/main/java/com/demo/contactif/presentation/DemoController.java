@@ -1,5 +1,6 @@
 package com.demo.contactif.presentation;
 
+import com.demo.contactif.application.accounts.ContactKeys;
 import com.demo.contactif.domain.application.contactkey.ContactKey;
 import com.demo.contactif.infrastructure.application.ContactKeyRepository;
 import org.springframework.mail.MailSender;
@@ -17,17 +18,19 @@ import java.security.Principal;
 @Controller
 public class DemoController {
     private final ContactKeyRepository contactKeyRepository;
+    private final ContactKeys contactKeys;
     private final MailSender mailSender;
 
-    public DemoController(ContactKeyRepository contactKeyRepository, MailSender mailSender) {
+    public DemoController(ContactKeyRepository contactKeyRepository, ContactKeys contactKeys, MailSender mailSender) {
         this.contactKeyRepository = contactKeyRepository;
+        this.contactKeys = contactKeys;
         this.mailSender = mailSender;
     }
 
     @GetMapping("/mypage")
     public String index(Principal principal, Model model) {
         model.addAttribute("userId", principal.getName());
-        model.addAttribute("contactKeyList", contactKeyRepository.findByUserId(principal.getName()));
+        model.addAttribute("contactKeyIdList", contactKeys.getContactKeysByUserId(principal.getName()));
         return "/myPage.html";
     }
 
