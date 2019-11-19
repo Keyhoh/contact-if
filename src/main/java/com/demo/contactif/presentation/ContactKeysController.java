@@ -1,6 +1,7 @@
 package com.demo.contactif.presentation;
 
 import com.demo.contactif.application.accounts.ContactKeys;
+import com.demo.contactif.domain.account.Account;
 import com.demo.contactif.domain.application.contactkey.ContactKey;
 import lombok.NonNull;
 import org.springframework.web.bind.annotation.*;
@@ -18,11 +19,11 @@ public class ContactKeysController {
 
     @PostMapping
     public ContactKey postContactKey(@NonNull Principal principal) {
-        return contactKeys.postContactKey(principal.getName());
+        return contactKeys.postContactKey(Account.of(principal));
     }
 
     @DeleteMapping("{id}")
     public void deleteContactKey(@NonNull Principal principal, @PathVariable String id) {
-        contactKeys.deleteContactKey(id, principal.getName());
+        contactKeys.deleteContactKey(id, Account.of(principal));
     }
 }
