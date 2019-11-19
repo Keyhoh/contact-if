@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <account id="0b60eb02-59b3-4ad7-abc4-143848c7edad"/>
+  <account id="1509a80a-fbcf-4a30-9619-8202e0fcc314"/>
+  <account id="1e2043bc-64a6-41c1-a160-f13a5fd920b2"/>
+  <account id="4d6dbe3a-17cd-4289-b2db-3c5cc8067fe2"/>
+  <account id="6e358bdf-e21c-4387-aae7-7a03dcb59ece"/>
+  <authentication id="0b60eb02-59b3-4ad7-abc4-143848c7edad" admin="false" enabled="true" password="$2a$10$FNfH7NZCjwe9qqdS7esnaePn3a9qPeT3ZmePcmbVCZuq.7xwy1mpq"/>
+  <authentication id="1509a80a-fbcf-4a30-9619-8202e0fcc314" admin="false" enabled="true" password="$2a$10$5GS5hQaDV/CRUDBOou4wcu8QNsM3NgLjeKgRbPF593tMHq9.l82am"/>
+  <authentication id="1e2043bc-64a6-41c1-a160-f13a5fd920b2" admin="false" enabled="true" password="$2a$10$nlAyeWbKrt6swLKcKmxTouzbWzlq9BJK10aBs/CQy/aPygtMvz/Ve"/>
+  <authentication id="4d6dbe3a-17cd-4289-b2db-3c5cc8067fe2" admin="false" enabled="true" password="$2a$10$rtSgDhiAYHB81R8TN.HZg.PmHnuUUPyz45j3HkrLithY1w89u5oiS"/>
+  <authentication id="6e358bdf-e21c-4387-aae7-7a03dcb59ece" admin="false" enabled="true" password="$2a$10$VaheXKPdYvubcMYPC0NcJ.N3sgGEoqirTzozRYhkyV7KbYxpfqnA6"/>
+  <contact_key id="0b9cee67-8cbc-44b6-8dfe-a0e4a03bae5e" user_id="1e2043bc-64a6-41c1-a160-f13a5fd920b2"/>
+  <contact_key id="1556b108-6755-42ef-ada1-00fea78043b9" user_id="1509a80a-fbcf-4a30-9619-8202e0fcc314"/>
+  <contact_key id="2c0468b4-b123-40c8-b998-78ae3bfa3e4c" user_id="1509a80a-fbcf-4a30-9619-8202e0fcc314"/>
+  <contact_key id="2cbedae6-9e76-4e19-bd0c-c87e632aedce" user_id="0b60eb02-59b3-4ad7-abc4-143848c7edad"/>
+  <contact_key id="2d3e0266-d30b-4367-aa29-44d377d3ad7f" user_id="0b60eb02-59b3-4ad7-abc4-143848c7edad"/>
+  <contact_key id="2daa76e2-b101-45a4-bd95-0da46b4ad28c" user_id="0b60eb02-59b3-4ad7-abc4-143848c7edad"/>
+  <contact_key id="343c96de-c9ca-4120-9baf-cffe6242032d" user_id="6e358bdf-e21c-4387-aae7-7a03dcb59ece"/>
+  <contact_key id="38e13d07-7627-4988-b1c5-7d345e8076b0" user_id="4d6dbe3a-17cd-4289-b2db-3c5cc8067fe2"/>
+  <contact_key id="3d7aa563-e901-4314-a405-326ca720cd0b" user_id="4d6dbe3a-17cd-4289-b2db-3c5cc8067fe2"/>
+  <contact_key id="4ad4164d-8d4a-4620-b487-a4d451a6f501" user_id="1509a80a-fbcf-4a30-9619-8202e0fcc314"/>
+  <contact_key id="5a933fc0-6d58-4fa6-b67f-a8b5db249634" user_id="6e358bdf-e21c-4387-aae7-7a03dcb59ece"/>
+  <contact_key id="617cbe1b-52bc-4543-82e9-85df08e0d855" user_id="4d6dbe3a-17cd-4289-b2db-3c5cc8067fe2"/>
+  <contact_key id="6491b77d-e56d-4169-8805-b94f3ff2f6c8" user_id="1e2043bc-64a6-41c1-a160-f13a5fd920b2"/>
+  <contact_key id="65ca58d9-0a59-40a4-a702-d0898500fdfe" user_id="6e358bdf-e21c-4387-aae7-7a03dcb59ece"/>
+  <contact_key id="679b32d8-57d2-497e-9916-4b0ff4bcd606" user_id="1509a80a-fbcf-4a30-9619-8202e0fcc314"/>
+  <contact_key id="98677f9d-7c1c-42cc-a280-e16df05e1442" user_id="6e358bdf-e21c-4387-aae7-7a03dcb59ece"/>
+  <contact_key id="a3c566f9-4e6a-4421-af96-33cd06061f78" user_id="1e2043bc-64a6-41c1-a160-f13a5fd920b2"/>
+  <contact_key id="a57fa73b-3ae6-4fe1-b6da-a79f7c00315c" user_id="0b60eb02-59b3-4ad7-abc4-143848c7edad"/>
+  <contact_key id="a689238b-f9ab-42d9-8be8-fa66a0d0dd02" user_id="1509a80a-fbcf-4a30-9619-8202e0fcc314"/>
+  <contact_key id="aa95aa9c-6f46-4709-90d3-fbb3a7b4bc95" user_id="0b60eb02-59b3-4ad7-abc4-143848c7edad"/>
+  <contact_key id="bbd5ec55-b86b-43e6-a6c4-b88461e648bb" user_id="1e2043bc-64a6-41c1-a160-f13a5fd920b2"/>
+  <contact_key id="c3d72554-6f22-4837-87e0-89d4b33af262" user_id="6e358bdf-e21c-4387-aae7-7a03dcb59ece"/>
+  <contact_key id="c8966fd8-b6f0-4698-a1eb-277b71e5ff1b" user_id="4d6dbe3a-17cd-4289-b2db-3c5cc8067fe2"/>
+  <contact_key id="ca26151f-1f22-4374-a64b-ea35557eabbd" user_id="4d6dbe3a-17cd-4289-b2db-3c5cc8067fe2"/>
+  <contact_key id="db2ea83c-2187-47f4-93ba-6e560d2cb042" user_id="1e2043bc-64a6-41c1-a160-f13a5fd920b2"/>
+  <user id="0b60eb02-59b3-4ad7-abc4-143848c7edad" email_address="mail4@test.dev"/>
+  <user id="1509a80a-fbcf-4a30-9619-8202e0fcc314" email_address="mail5@test.dev"/>
+  <user id="1e2043bc-64a6-41c1-a160-f13a5fd920b2" email_address="mail2@test.dev"/>
+  <user id="4d6dbe3a-17cd-4289-b2db-3c5cc8067fe2" email_address="mail3@test.dev"/>
+  <user id="6e358bdf-e21c-4387-aae7-7a03dcb59ece" email_address="mail1@test.dev"/>
+</dataset>

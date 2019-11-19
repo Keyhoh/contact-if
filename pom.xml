@@ -20,6 +20,8 @@
         <org.springframework.boot.version>2.1.9.RELEASE</org.springframework.boot.version>
         <org.junit.jupiter.version>5.5.2</org.junit.jupiter.version>
         <org.mockito.version>3.0.0</org.mockito.version>
+        <org.dbunit.version>2.6.0</org.dbunit.version>
+        <com.github.database-rider.version>1.7.3</com.github.database-rider.version>
         <mysql.version>8.0.17</mysql.version>
         <org.projectlombok.version>1.18.10</org.projectlombok.version>
         <database.url>jdbc:mysql://localhost:3306/test_db?serverTimezone=UTC</database.url>
@@ -112,6 +114,30 @@
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>${org.mockito.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <version>${org.dbunit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.database-rider</groupId>
+            <artifactId>rider-core</artifactId>
+            <version>${com.github.database-rider.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.database-rider</groupId>
+            <artifactId>rider-spring</artifactId>
+            <version>${com.github.database-rider.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-simple</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
