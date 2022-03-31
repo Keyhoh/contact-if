@@ -17,7 +17,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <org.springframework.boot.version>2.1.9.RELEASE</org.springframework.boot.version>
+        <org.springframework.boot.version>2.5.12</org.springframework.boot.version>
         <org.junit.jupiter.version>5.5.2</org.junit.jupiter.version>
         <org.mockito.version>3.0.0</org.mockito.version>
         <org.dbunit.version>2.6.0</org.dbunit.version>
