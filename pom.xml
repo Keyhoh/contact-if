@@ -22,7 +22,7 @@
         <org.mockito.version>3.0.0</org.mockito.version>
         <org.dbunit.version>2.6.0</org.dbunit.version>
         <com.github.database-rider.version>1.7.3</com.github.database-rider.version>
-        <mysql.version>8.0.17</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <org.projectlombok.version>1.18.10</org.projectlombok.version>
         <database.url>jdbc:mysql://localhost:3306/test_db?serverTimezone=UTC</database.url>
         <database.username>test_user</database.username>
